@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="body" type="Node2D"]
+
+[node name="graphic" type="Sprite" parent="."]
+
+[node name="Open me up!" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 214.0
+margin_bottom = 447.0
+text = "[Click to open body]"

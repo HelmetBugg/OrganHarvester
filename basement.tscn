@@ -20,15 +20,19 @@ text = "Send Out Goon"
 script = ExtResource( 2 )
 
 [node name="body1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 769, 13 )
+position = Vector2( 770, 109 )
 
 [node name="body2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 540, 13 )
+position = Vector2( 628, 138 )
 
 [node name="body3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 306, 13 )
+position = Vector2( 492, 91 )
 
-[node name="body4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 75, 14 )
+[node name="Money_Count" type="Label" parent="."]
+margin_left = 874.0
+margin_top = 671.0
+margin_right = 987.0
+margin_bottom = 697.0
+text = "Money: $0"
 
 [connection signal="pressed" from="GoonButton" to="GoonButton" method="_on_GoonButton_pressed"]

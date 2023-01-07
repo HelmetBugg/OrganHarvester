@@ -24,5 +24,6 @@ func _on_open_button_pressed():	#get_tree().change_scene_to(load('res://operatio
 	var operating_room_scene = load("res://operation_room.tscn")
 	var instance = operating_room_scene.instance()
 	instance.current_body = self
+	#get_node("../InstanceContainer").add_child(instance)
 	get_parent().add_child(instance)
 	

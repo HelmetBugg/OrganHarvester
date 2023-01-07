@@ -23,11 +23,11 @@ position = Vector2( 501.5, 351 )
 scale = Vector2( 0.5025, 0.498571 )
 texture = ExtResource( 5 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Icebox" type="Area2D" parent="."]
 position = Vector2( 496, 349 )
 input_pickable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icebox"]
 position = Vector2( -315, -188 )
 shape = SubResource( 1 )
 
@@ -65,9 +65,9 @@ position = Vector2( 516, 63 )
 shape = SubResource( 2 )
 
 [node name="graphic" type="Sprite" parent="Body"]
-position = Vector2( 525.953, 81.0449 )
+position = Vector2( 527.488, 62.3226 )
 rotation = -1.56865
-scale = Vector2( 0.210739, 0.344588 )
+scale = Vector2( 0.189932, 0.285841 )
 texture = ExtResource( 2 )
 
 [node name="test_organ" type="KinematicBody2D" parent="."]
@@ -84,5 +84,7 @@ texture = ExtResource( 4 )
 position = Vector2( 342.25, 490.5 )
 shape = SubResource( 3 )
 
+[connection signal="body_entered" from="Icebox" to="test_organ" method="_on_Icebox_body_entered"]
+[connection signal="body_exited" from="Icebox" to="test_organ" method="_on_Icebox_body_exited"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="input_event" from="test_organ" to="test_organ" method="_on_test_organ_input_event"]

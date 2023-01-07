@@ -22,11 +22,20 @@ autoplay = true
 [node name="body1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 770, 109 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="body1"]
+stream = ExtResource( 6 )
+
 [node name="body2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 628, 138 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="body2"]
+stream = ExtResource( 6 )
+
 [node name="body3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 492, 91 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="body3"]
+stream = ExtResource( 6 )
 
 [node name="InstanceContainer" type="Node" parent="."]
 

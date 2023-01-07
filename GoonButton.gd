@@ -8,6 +8,7 @@ func _ready():
 	ProgressBar = get_node("../ProgressBar")
 
 func _on_GoonButton_pressed(): 
+	$AudioStreamPlayer2D.play()
 	timer.connect("timeout",self,"fetch_body") 
 	timer.wait_time = 2
 	timer.one_shot = true

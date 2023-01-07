@@ -19,6 +19,7 @@ func _on_GoonButton_pressed():
 		timer.start()
 
 
+
 func _process(delta):
 	ProgressBar.value = 10 * (timer.time_left / (timer.wait_time - timer.time_left))
 

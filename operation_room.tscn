@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://operation_room.gd" type="Script" id=1]
-[ext_resource path="res://art/table_body_placeholder.png" type="Texture" id=2]
+[ext_resource path="res://art/body_operation_sprite.png" type="Texture" id=2]
 [ext_resource path="res://test_organ.gd" type="Script" id=3]
 [ext_resource path="res://art/organ_1.png" type="Texture" id=4]
 [ext_resource path="res://art/operation_room_bg.png" type="Texture" id=5]
@@ -64,13 +64,13 @@ input_pickable = false
 position = Vector2( 516, 63 )
 shape = SubResource( 2 )
 
-[node name="graphic" type="Sprite" parent="Body"]
-position = Vector2( 527.488, 62.3226 )
-rotation = -1.56865
-scale = Vector2( 0.189932, 0.285841 )
+[node name="Sprite" type="Sprite" parent="Body"]
+position = Vector2( 529, -50 )
+scale = Vector2( 0.500391, 0.413825 )
 texture = ExtResource( 2 )
 
 [node name="test_organ" type="KinematicBody2D" parent="."]
+visible = false
 position = Vector2( 218, 10 )
 input_pickable = true
 script = ExtResource( 3 )

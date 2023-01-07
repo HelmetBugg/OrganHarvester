@@ -57,6 +57,11 @@ rect_pivot_offset = Vector2( 43, 52 )
 size_flags_vertical = 2
 text = "End Harvest & Incinerate Body"
 
+[node name="Graphic" type="Sprite" parent="."]
+position = Vector2( 500, 368 )
+scale = Vector2( 0.500391, 0.413825 )
+texture = ExtResource( 2 )
+
 [node name="Body" type="Area2D" parent="."]
 position = Vector2( -29, 418 )
 script = ExtResource( 6 )
@@ -64,12 +69,6 @@ script = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 position = Vector2( 516, 45.5 )
 shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Body"]
-visible = false
-position = Vector2( 529, -50 )
-scale = Vector2( 0.500391, 0.413825 )
-texture = ExtResource( 2 )
 
 [node name="test_organ" type="KinematicBody2D" parent="."]
 visible = false

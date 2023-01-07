@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GoonButton.gd" type="Script" id=2]
+[ext_resource path="res://art/basement_bg.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 498.5, 361.5 )
+scale = Vector2( 0.5015, 0.483571 )
+texture = ExtResource( 3 )
 
 [node name="GoonButton" type="Button" parent="."]
 margin_left = 12.0

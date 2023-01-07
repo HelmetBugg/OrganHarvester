@@ -1,21 +1,28 @@
 extends Node2D
 
-var active = true
+var occupied = true
 var harvested = false
+var scene_instance
 
 func _ready():
-	toggleActive()
+	toggle_occupied()
 	add_to_group("bodies")
 	
-func toggleActive():
-	if active:
+	
+func toggle_occupied():
+	if occupied:
 		$graphic.visible = false
 		$open_button.visible = false
-		active = false
+		occupied = false
 	else:
 		$graphic.visible = true
 		$open_button.visible = true
-		active = true		
+		occupied = true		
+		
 
-func _on_open_button_pressed():
-	get_tree().change_scene_to(load('res://operation_room.tscn'))
+func _on_open_button_pressed():	#get_tree().change_scene_to(load('res://operation_room.tscn'))
+	var operating_room_scene = load("res://operation_room.tscn")
+	var instance = operating_room_scene.instance()
+	instance.current_body = self
+	get_parent().add_child(instance)
+	

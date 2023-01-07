@@ -55,6 +55,7 @@ margin_right = 158.0
 margin_bottom = 691.0
 text = "Send Out Goon"
 script = ExtResource( 2 )
+debug = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="GoonNode/GoonButton"]
 stream = ExtResource( 6 )

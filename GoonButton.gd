@@ -9,15 +9,19 @@ func _ready():
 
 func _on_GoonButton_pressed(): 
 	$AudioStreamPlayer2D.play()
-	timer.connect("timeout",self,"fetch_body") 
-	timer.wait_time = 2
-	timer.one_shot = true
-	add_child(timer)
-	timer.start()
+	if debug:
+		fetch_body()
+	else:
+		timer.connect("timeout",self,"fetch_body") 
+		timer.wait_time = 2
+		timer.one_shot = true
+		add_child(timer)
+		timer.start()
 
 
 func _process(delta):
 	ProgressBar.value = 10 * (timer.time_left / (timer.wait_time - timer.time_left))
+
 
 func fetch_body():
 	print("On my way to the graveyard!")

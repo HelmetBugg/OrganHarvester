@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://operation_room.gd" type="Script" id=1]
 [ext_resource path="res://art/table_body_placeholder.png" type="Texture" id=2]
+[ext_resource path="res://test_organ.gd" type="Script" id=3]
+[ext_resource path="res://art/organ_1.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 195.5, 291 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 235.125, 321.75 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 78.75, 77.5 )
 
 [node name="operation_room" type="Node2D"]
 script = ExtResource( 1 )
@@ -57,4 +62,18 @@ position = Vector2( 320, -28.5 )
 scale = Vector2( 0.26, 0.258 )
 texture = ExtResource( 2 )
 
+[node name="test_organ" type="KinematicBody2D" parent="."]
+input_pickable = true
+script = ExtResource( 3 )
+
+[node name="graphic" type="Sprite" parent="test_organ"]
+position = Vector2( 341, 488 )
+scale = Vector2( 0.228596, 0.161036 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test_organ"]
+position = Vector2( 342.25, 490.5 )
+shape = SubResource( 3 )
+
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="input_event" from="test_organ" to="test_organ" method="_on_test_organ_input_event"]

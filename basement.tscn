@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GoonButton.gd" type="Script" id=2]
 [ext_resource path="res://art/basement_bg.png" type="Texture" id=3]
 [ext_resource path="res://Money_Handler.gd" type="Script" id=4]
+[ext_resource path="res://art/progress_texture.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,16 +14,7 @@ scale = Vector2( 0.5015, 0.483571 )
 texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="background"]
-stream = ExtResource( 4 )
 autoplay = true
-
-[node name="GoonButton" type="Button" parent="."]
-margin_left = 12.0
-margin_top = 651.0
-margin_right = 158.0
-margin_bottom = 691.0
-text = "Send Out Goon"
-script = ExtResource( 2 )
 
 [node name="body1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 770, 109 )
@@ -43,4 +35,24 @@ margin_bottom = 696.0
 text = "Money: $0"
 script = ExtResource( 4 )
 
-[connection signal="pressed" from="GoonButton" to="GoonButton" method="_on_GoonButton_pressed"]
+[node name="GoonNode" type="Node2D" parent="."]
+
+[node name="ProgressBar" type="TextureProgress" parent="GoonNode"]
+margin_left = 7.0
+margin_top = 626.0
+margin_right = 166.0
+margin_bottom = 726.0
+rect_scale = Vector2( 1.26051, 0.206385 )
+texture_progress = ExtResource( 5 )
+
+[node name="GoonButton" type="Button" parent="GoonNode"]
+margin_left = 12.0
+margin_top = 651.0
+margin_right = 158.0
+margin_bottom = 691.0
+text = "Send Out Goon"
+script = ExtResource( 2 )
+
+[node name="graphic" type="Sprite" parent="GoonNode"]
+
+[connection signal="pressed" from="GoonNode/GoonButton" to="GoonNode/GoonButton" method="_on_GoonButton_pressed"]

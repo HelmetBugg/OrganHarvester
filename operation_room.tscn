@@ -1,20 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://operation_room.gd" type="Script" id=1]
 [ext_resource path="res://art/body_operation_sprite.png" type="Texture" id=2]
-[ext_resource path="res://test_organ.gd" type="Script" id=3]
-[ext_resource path="res://art/organ_1.png" type="Texture" id=4]
 [ext_resource path="res://art/operation_room_bg.png" type="Texture" id=5]
 [ext_resource path="res://Body.gd" type="Script" id=6]
+[ext_resource path="res://Organ.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 180.75, 120.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 462, 171.5 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 78.75, 77.5 )
 
 [node name="operation_room" type="Node2D"]
 script = ExtResource( 1 )
@@ -70,23 +66,19 @@ script = ExtResource( 6 )
 position = Vector2( 516, 45.5 )
 shape = SubResource( 2 )
 
-[node name="test_organ" type="KinematicBody2D" parent="."]
+[node name="Organ1" parent="." instance=ExtResource( 7 )]
 visible = false
-position = Vector2( 218, 10 )
-input_pickable = true
-script = ExtResource( 3 )
+position = Vector2( 161, 269 )
 
-[node name="graphic" type="Sprite" parent="test_organ"]
-position = Vector2( 341, 488 )
-scale = Vector2( 0.228596, 0.161036 )
-texture = ExtResource( 4 )
+[node name="Organ2" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 357, 292 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="test_organ"]
-position = Vector2( 342.25, 490.5 )
-shape = SubResource( 3 )
+[node name="Organ3" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 534, 261 )
 
-[connection signal="body_entered" from="Icebox" to="test_organ" method="_on_Icebox_body_entered"]
-[connection signal="body_exited" from="Icebox" to="test_organ" method="_on_Icebox_body_exited"]
+[connection signal="body_entered" from="Icebox" to="Organ1" method="_on_Icebox_body_entered"]
+[connection signal="body_exited" from="Icebox" to="Organ1" method="_on_Icebox_body_exited"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="input_event" from="Body" to="Body" method="_on_Body_input_event"]
-[connection signal="input_event" from="test_organ" to="test_organ" method="_on_test_organ_input_event"]

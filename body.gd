@@ -27,4 +27,3 @@ func _on_open_button_pressed():	#get_tree().change_scene_to(load('res://operatio
 	instance.current_body = self
 	#get_node("../InstanceContainer").add_child(instance)
 	get_parent().add_child(instance)
-	

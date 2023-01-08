@@ -28,22 +28,6 @@ input_pickable = false
 position = Vector2( -315, -188 )
 shape = SubResource( 1 )
 
-[node name="Button" type="Button" parent="."]
-margin_left = 672.0
-margin_top = 124.0
-margin_right = 817.0
-margin_bottom = 197.0
-rect_pivot_offset = Vector2( 43, 52 )
-text = "Foreceps"
-
-[node name="Button2" type="Button" parent="."]
-margin_left = 848.0
-margin_top = 128.0
-margin_right = 981.0
-margin_bottom = 194.0
-rect_pivot_offset = Vector2( 43, 52 )
-text = "Laser Tool"
-
 [node name="Button3" type="Button" parent="."]
 margin_left = 761.0
 margin_top = 5.0
@@ -67,16 +51,10 @@ position = Vector2( 516, 45.5 )
 shape = SubResource( 2 )
 
 [node name="Organ1" parent="." instance=ExtResource( 7 )]
-visible = false
 position = Vector2( 161, 269 )
 
 [node name="Organ2" parent="." instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 357, 292 )
-
-[node name="Organ3" parent="." instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 534, 261 )
+position = Vector2( 347, 315 )
 
 [connection signal="body_entered" from="Icebox" to="Organ1" method="_on_Icebox_body_entered"]
 [connection signal="body_exited" from="Icebox" to="Organ1" method="_on_Icebox_body_exited"]

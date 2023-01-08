@@ -5,7 +5,7 @@ var grabbed_offset = Vector2()
 var original_position = Vector2()
 var over_icebox = false
 var dragging = false
-
+var offset = 1000
 var rng = RandomNumberGenerator.new()
 var grade = 0
 var price = 0
@@ -14,8 +14,11 @@ var type = 0
 func _ready():
 	connect("dragsignal",self,"_set_drag_pc")
 	add_to_group("organs")
+	self.position.y += offset
+	
 	
 func generate_organ():
+	self.position.y -= offset
 	self.visible = true
 	rng.randomize()
 	grade = rng.randi_range(1, 6)
@@ -27,6 +30,8 @@ func generate_organ():
 
 func remove_organ():
 	self.visible = false	
+	self.position.y += offset
+	
 	
 func _process(delta):
 	if dragging:
@@ -40,21 +45,19 @@ func _set_drag_pc():
 
 func _on_Organ_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-		# On click
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			grabbed_offset = position - get_global_mouse_position()
 			original_position = position
 			emit_signal("dragsignal")
-		# On release
+			
+
 		elif event.button_index == BUTTON_LEFT and !event.pressed:
 			if over_icebox:
 				print("iceboxed!")
 				var money_handler = get_parent().get_node("../Money_Count")
 				money_handler.money += price
 				money_handler.update()
-				original_position = position
 				remove_organ()
-				#self.queue_free()
 			else:
 				position = original_position
 			emit_signal("dragsignal")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Incinerate.mp3-1932b2ddd1de8c17ed54ccfec4e63828.mp3str"
+
+[deps]
+
+source_file="res://sound/Incinerate.mp3"
+dest_files=[ "res://.import/Incinerate.mp3-1932b2ddd1de8c17ed54ccfec4e63828.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

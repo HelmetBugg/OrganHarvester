@@ -7,4 +7,4 @@ func _ready():
 	update()
 	
 func update():
-	self.text = "Amount needed to build \norphanage: $1,000,000\nCurrent: $" + str(money)
+	self.text = "Amount needed to build \norphanage: $500,000\nCurrent: $" + str(money)

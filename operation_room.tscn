@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://operation_room.gd" type="Script" id=1]
 [ext_resource path="res://art/body_operation_sprite.png" type="Texture" id=2]
+[ext_resource path="res://sound/Incinerate.mp3" type="AudioStream" id=3]
+[ext_resource path="res://sound/slice.mp3" type="AudioStream" id=4]
 [ext_resource path="res://art/operation_room_bg.png" type="Texture" id=5]
 [ext_resource path="res://Body.gd" type="Script" id=6]
 [ext_resource path="res://Organ.tscn" type="PackedScene" id=7]
@@ -51,6 +53,9 @@ position = Vector2( 516, 45.5 )
 shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Body"]
+stream = ExtResource( 4 )
+volume_db = 7.068
+pitch_scale = 1.42
 
 [node name="Organ1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 161, 269 )
@@ -60,6 +65,11 @@ position = Vector2( 338, 312 )
 
 [node name="Organ3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 523, 276 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.049
+pitch_scale = 0.92
 
 [connection signal="body_entered" from="Icebox" to="Organ1" method="_on_Icebox_body_entered"]
 [connection signal="body_entered" from="Icebox" to="Organ2" method="_on_Icebox_body_entered"]

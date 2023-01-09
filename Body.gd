@@ -27,6 +27,7 @@ func _on_Body_input_event(viewport, event, shape_idx):
 			
 			
 func body_opened():
+	$AudioStreamPlayer.play()
 	state = "open"	
 	sprite.set_texture(opened_graphic)
 	spawn_organs()

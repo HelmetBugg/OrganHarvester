@@ -50,6 +50,8 @@ script = ExtResource( 6 )
 position = Vector2( 516, 45.5 )
 shape = SubResource( 2 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Body"]
+
 [node name="Organ1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 161, 269 )
 
